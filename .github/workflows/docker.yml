@@ -23,26 +23,26 @@ jobs:
       - name: Login to DockerHub
         run: echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
  
-      - name: Build and push servicio-categorias
+      - name: Build and push Microservicio_Clima
         uses: docker/build-push-action@v2
         with:
-          context: ./servicio-categorias
-          file: ./servicio-categorias/Dockerfile
+          context: ./Microservicio_Clima
+          file: ./Microservicio_Clima/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/servicio-categorias:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/microservicio_clima:latest
  
-      - name: Build and push servicio-productos
+      - name: Build and push Nasa
         uses: docker/build-push-action@v2
         with:
-          context: ./servicio-productos
-          file: ./servicio-productos/Dockerfile
+          context: ./Nasa
+          file: ./Nasa/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/servicio-productos:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/nasa:latest
  
-      - name: Build and push servicio-usuarios
+      - name: Build and push NasaImagen
         uses: docker/build-push-action@v2
         with:
-          context: ./servicio-usuarios
-          file: ./servicio-usuarios/Dockerfile
+          context: ./NasaImagen
+          file: ./NasaImagen/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/servicio-usuarios:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/nasaimagen:latest
