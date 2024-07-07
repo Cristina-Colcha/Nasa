@@ -1,0 +1,61 @@
+# Weather Microservice
+
+This project is a microservice for fetching weather information from various cities around the world. It is built using Node.js, Express, and integrates Swagger for API documentation.
+
+weather-microservice/
+│
+├── api/
+│   ├── weather.js          # Controllers for handling API routes
+│   └── swagger.yaml        # Swagger specification
+│
+├── node_modules/           # Installed npm dependencies
+│
+├── app.js                  # Main entry point of the application
+├── package.json            # npm configuration file
+└── README.md               # Project documentation
+
+
+## Features
+
+- Fetch current weather information by city name.
+- API documentation using Swagger UI.
+- Containerized using Docker for easy deployment.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+- Docker (for containerization)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd weather-microservice
+
+2. Build Project
+    
+  Set your OpenWeatherMap API key in api/weather.js:
+  const apiKey = '36186da6-3a54-11ef-899d-0242ac130004-36186e1e-3a54-11ef-899d-0242ac130004';
+
+3. Build the Docker Image
+   To build the Docker image
+   docker build -t clima-microservicio .
+   docker run -p 3000:3000 --name clima-container clima-microservicio
+
+### The server will start on http://localhost:3000/api/weather/Quito
+
+### API Documentation
+    Swagger UI is available at http://localhost:3000/api-docs.
+
+### Contributors
+    Edwin Proaño Cristina Colcha - (Link del Github)
+
+###License
+   This project is licensed under the MIT License - see the LICENSE file for details.
+
+    This `README.md` file now includes all necessary information, including the project overview, installation instructions, running the application, project structure, example API calls, file contents, contributors, and license information.

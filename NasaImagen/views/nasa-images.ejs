@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasa Imagenes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Buscar Imagenes de la Nasa</h1>
+    <form action="/nasa/images" method="get">
+        <input type="text" name="q" placeholder="Ingrese la imagen de su interes" required>
+        <button type="submit">Buscar</button>
+    </form>
+    <div id="image-results">
+        <% if (images && images.length > 0) { %>
+            <% images.forEach(image => { %>
+                <div class="image">
+                    <h2><%= image.title %></h2>
+                    <img src="<%= image.imageUrl %>" alt="<%= image.title %>">
+                    <p><%= image.description %></p>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No images found for "<%= query %>". Try another search.</p>
+        <% } %>
+    </div>
+</body>
+</html>

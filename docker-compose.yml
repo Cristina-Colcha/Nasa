@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  servicio1:
+    image: clima-microservicio
+    ports:
+      - "3001:3001"
+ 
+  servicio2:
+    image: imagen-dia
+    ports:
+      - "3002:3002"
+   
+
+  servicio3:
+    image: datos-nasa
+    ports:
+      - "3003:3003"
+   

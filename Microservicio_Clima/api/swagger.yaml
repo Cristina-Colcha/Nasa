@@ -1,0 +1,30 @@
+openapi: 3.0.0
+info:
+  title: Weather Microservice API
+  version: 1.0.0
+  description: Microservice to fetch weather information from various cities.
+paths:
+  /weather/{city}:
+    get:
+      summary: Get weather information by city name.
+      parameters:
+        - in: path
+          name: city
+          required: true
+          schema:
+            type: string
+          description: Name of the city to fetch weather information for.
+      responses:
+        '200':
+          description: Weather information retrieved successfully.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  city:
+                    type: string
+                  temperature:
+                    type: number
+                  description:
+                    type: string

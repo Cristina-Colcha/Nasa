@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selección de Microservicio</title>
+</head>
+<body>
+  <h1>Selecciona un Microservicio:</h1>
+  <button id="microservicio1">Microservicio 1</button>
+  <button id="microservicio2">Microservicio 2</button>
+  <button id="microservicio3">Microservicio 3</button>
+
+  <script>
+    // Agrega eventos de clic a los botones
+    document.getElementById('microservicio1').addEventListener('click', function() {
+      // Redirige al usuario al microservicio 1
+      window.location.href = 'http://localhost:3001';
+    });
+
+    document.getElementById('microservicio2').addEventListener('click', function() {
+      // Redirige al usuario al microservicio 2
+      window.location.href = 'http://localhost:3002';
+    });
+
+    document.getElementById('microservicio3').addEventListener('click', function() {
+      // Redirige al usuario al microservicio 3
+      window.location.href = 'http://localhost:3003';
+    });
+  </script>
+</body>
+</html>
