@@ -1,0 +1,57 @@
+# NASA Images API Application
+
+This Node.js application displays images from the NASA Images API. It allows you to search for space related images and display the results.
+
+## Table of contents
+
+1. [Configuration](#configuration)
+   - Prerequisites](#prerequisites)
+   - Clone the Repository](#clone-the-repository)
+2. [Build the Docker Image](#build-docker-image)
+3. [Run the Docker Container](#run-the-container-docker)
+4. [Access the Application](#access-the-application)
+5. [Problem: Why does it open on port 3000 and not with its full path](#problem-why-does-it-open-on-port-3000-and-not-with-its-full-route)
+6. [Stop and Delete Container](#stop-and-delete-container)
+7. [Customization and Further Development](#customization-and-further-development-additional)
+
+---
+
+## Configuration
+
+To run this application locally or in a production environment, follow these steps:
+
+### Prerequisites
+
+Make sure you have the following installed on your machine:
+
+- [Docker](https://www.docker.com/get-started)
+- Git (optional if you already have the code downloaded).
+
+### Clone the Repository
+
+If you don't have the code on your machine yet, clone this repository from GitHub:
+
+````bash
+git clone <url-repository-name>
+cd <url-repository-name>
+
+Translated with DeepL.com (free version)
+
+### Execute the Project 
+
+Once the container is running, open your web browser and access the application at:
+
+http://localhost:3000/nasa/images
+This will take you to the NASA image search interface. You can enter search terms and view the corresponding images.
+
+
+### Notes:
+
+- Replace `<url-repository-url>` with the actual URL of your Git repository.
+- Replace `<repository-name>` with the actual name of your local repository.
+- Be sure to include any other application-specific settings or additional instructions that are necessary for proper operation.
+
+This README provides a detailed and organized guide for users and developers to configure, run, and understand your Node.js application that uses the NASA API to display space-related images.
+
+### Contributors
+Edwin Proaño Cristina Colcha 
