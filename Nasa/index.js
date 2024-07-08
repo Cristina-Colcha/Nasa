@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = process.env.PORT || 3002;  // Default port 
+const PORT = process.env.PORT || 3002;  
 // NASA API key (replace 'DEMO_KEY' with your own key)
 const API_KEY = 'hlY9J7wSzgNrT7zaZHequhNU98PXhpU7sydlqW4B';
 
