@@ -16,7 +16,7 @@ app.use('/nasa', nasaRouter);
 
 
 app.get('/', (req, res) => {
-  res.redirect('http://localhost:3003/nasa/images')
+  res.redirect('/nasa/images')
 });
 
 
