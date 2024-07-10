@@ -69,5 +69,5 @@ jobs:
             docker rm nasa || true
             docker rm nasaimagen || true
             docker run -d --name microservicio_clima -p 3001:3001 ${{ secrets.DOCKER_USERNAME }}/microservicio_clima:latest
-            docker run -d --nasas -p 3002:3002 ${{ secrets.DOCKER_USERNAME }}/nasa:latest
+            docker run -d --name nasa -p 3002:3002 ${{ secrets.DOCKER_USERNAME }}/nasa:latest
             docker run -d --name nasaimagen -p 3003:3003 ${{ secrets.DOCKER_USERNAME }}/nasaimagen:latest
