@@ -12,6 +12,9 @@ jobs:
     env:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      EC2_HOST: ${{ secrets.EC2_HOST }}
+      EC2_USER: ${{ secrets.EC2_USER }}
+      EC2_KEY: ${{ secrets.EC2_KEY }}
  
     steps:
       - name: Checkout code
@@ -46,3 +49,25 @@ jobs:
           file: ./NasaImagen/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/nasaimagen:latest
+
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_KEY }}  
+          script: |
+            docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+            docker pull ${{ secrets.DOCKER_USERNAME }}/microservicio_clima:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/nasa:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/nasaimagen:latest
+            docker stop microservicio_clima || true
+            docker stop nasa || true
+            docker stop nasaimagen || true
+            docker rm microservicio_clima || true
+            docker rm nasa || true
+            docker rm nasaimagen || true
+            docker run -d --name microservicio_clima -p 3001:3001 ${{ secrets.DOCKER_USERNAME }}/microservicio_clima:latest
+            docker run -d --nasas -p 3002:3002 ${{ secrets.DOCKER_USERNAME }}/nasa:latest
+            docker run -d --name nasaimagen -p 3003:3003 ${{ secrets.DOCKER_USERNAME }}/nasaimagen:latest
